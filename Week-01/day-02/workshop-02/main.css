@@ -1,0 +1,61 @@
+body {
+    margin: 0 auto;
+    background-image: URL("background/topography.png");
+    font-family: consolas, courier;
+}
+
+ul {
+    list-style-type: none;
+    text-decoration: underline;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+li {
+    float: right;
+    border-left:1px solid rgb(46, 47, 48);
+}
+
+li a {
+    color: #ff0099;
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 12px;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+h1 {
+    padding-top: 30px;
+}
+
+.middle {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.middle h2 {
+    text-align: center;
+}
+
+.middle h3 {
+    text-align: left;
+    color: #ff0099;
+}
+
+.bottom {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#dash {
+    text-align: center;
+    padding: 50px;
+}
