@@ -1,4 +1,5 @@
 public class Exercise03 {
+
     public static void main(String[] args) {
         // Greet 3 of your classmates with this program, in three separate lines
         // like:
@@ -11,5 +12,6 @@ public class Exercise03 {
         System.out.println("Hello, Mary");
         System.out.println("Hello, Joe");
     }
+
 }
 

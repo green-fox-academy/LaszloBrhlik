@@ -11,9 +11,7 @@ public class Exercise15 {
         int userInput1 = scanner.nextInt();
 
         double miles = userInput1 * 0.621371192;
-
         System.out.println("This is exactly " + miles + " miles");
-
-
     }
+
 }

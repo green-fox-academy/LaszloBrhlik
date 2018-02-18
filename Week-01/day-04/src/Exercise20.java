@@ -3,10 +3,7 @@ import java.util.Scanner;
 public class Exercise20 {
 
     public static void main(String[] args) {
-
-
         // Write a program that asks for two numbers and prints the bigger one
-
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please add two numbers:");
@@ -18,11 +15,6 @@ public class Exercise20 {
         } else {
             System.out.println("Number2 is bigger than number1!");
         }
-
-
-
-
     }
-
 
 }

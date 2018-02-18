@@ -7,15 +7,10 @@ public class Exercise14 {
         // The program should ask for the name of the user
 
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Please add your username!");
 
         String userInput1 = scanner.nextLine();
-
         System.out.println("Greetings user: " + userInput1);
-
-
-
-
     }
+
 }

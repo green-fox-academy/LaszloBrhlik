@@ -9,20 +9,15 @@ public class Exercise16 {
             // It should print how many legs all the animals have
 
             Scanner scanner = new Scanner(System.in);
-
             System.out.println("Add please the number of chickens:");
 
             int chickenNr = scanner.nextInt();
-
             System.out.println("Add please the number of pigs:");
 
             int pigNr = scanner.nextInt();
-
             int totalLegs = chickenNr * 2 + pigNr * 4;
-
             System.out.println("Total legs are: " + totalLegs);
-
-
         }
-    }
+
+}
 

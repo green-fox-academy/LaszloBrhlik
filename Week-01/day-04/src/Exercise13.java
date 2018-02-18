@@ -19,9 +19,6 @@ public class Exercise13 {
         maxSumSeconds = maxHours * 3600 + maxMinutes * 60 + maxSeconds;
 
         System.out.println("Current seconds left: " + (maxSumSeconds-currentSumSeconds) + " sec");
-
-
-
     }
 
 }

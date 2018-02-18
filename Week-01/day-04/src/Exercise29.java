@@ -3,24 +3,16 @@ import java.util.Scanner;
 public class Exercise29 {
 
     public static void main(String[] args) {
-
-
-
-// Write a program that reads a number from the standard input, then draws a
-// pyramid like this:
-//
-//
-//    *
-//   ***
-//  *****
-// *******
-//
-// The pyramid should have as many lines as the number was
+        // Write a program that reads a number from the standard input, then draws a
+        // pyramid like this:
+        //    *
+        //   ***
+        //  *****
+        // *******
+        // The pyramid should have as many lines as the number was
 
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Please add a number");
-
         int number = scanner.nextInt();
 
         for (int i = (number+1), j = 0; i > 0 && j < (number+1); i--, j++) {
@@ -35,7 +27,6 @@ public class Exercise29 {
             }
             System.out.println();
         }
-
-
     }
+
 }

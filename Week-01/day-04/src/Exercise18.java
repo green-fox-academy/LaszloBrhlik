@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Exercise18 {
 
     public static void main(String[] args) {
-
         // Write a program that reads a number from the standard input,
         // Then prints "Odd" if the number is odd, or "Even" if it is even.
 
@@ -16,8 +15,6 @@ public class Exercise18 {
         } else {
             System.out.println("This is an \"odd\" number");
         }
-
-
     }
 
 }

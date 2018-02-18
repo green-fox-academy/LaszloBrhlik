@@ -16,6 +16,6 @@ public class Exercise10 {
         System.out.println(myAge);
         System.out.println(myHeight);
         System.out.println(married);
-
     }
+
 }
