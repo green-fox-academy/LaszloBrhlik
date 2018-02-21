@@ -4,7 +4,7 @@ import java.util.Random;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Exercise09_CenterBox {
+public class Exercise10_RainbowBoxes {
 
     public static void mainDraw(Graphics graphics) {
         // create a square drawing function that takes 1 parameter:
@@ -24,9 +24,10 @@ public class Exercise09_CenterBox {
     }
 
     public static void drawSquare(Graphics graphics, int[] x) {
-            for (int i = 0; i < x.length; i++) {
-                graphics.drawRect((WIDTH/2 - x[i]/2), (HEIGHT/2 - x[i]/2), x[i], x[i]);
-            }
+        for (int i = 0; i < x.length; i++) {
+            graphics.setColor(new Color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256)));
+            graphics.drawRect((WIDTH/2 - x[i]/2), (HEIGHT/2 - x[i]/2), x[i], x[i]);
+        }
     }
 
 
