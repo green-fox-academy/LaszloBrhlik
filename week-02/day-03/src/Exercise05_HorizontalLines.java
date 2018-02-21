@@ -16,16 +16,16 @@ public class Exercise05_HorizontalLines {
         // Draw 50 random lines with that function. Use loop for that.
 
         Random r = new Random();
-        int[] startingColorX = new int[50];
-        int[] startingColorY = new int[50];
+        int[] startingCoordsX = new int[50];
+        int[] startingCoordsY = new int[50];
 
         for (int i = 0; i < 50; i++) {
-            startingColorX[i] = r.nextInt(WIDTH);
-            startingColorY[i] = r.nextInt(HEIGHT);
+            startingCoordsX[i] = r.nextInt(WIDTH);
+            startingCoordsY[i] = r.nextInt(HEIGHT);
         }
 
-        for (int i = 0; i < startingColorX.length; i++) {
-            drawHorizontal(graphics, startingColorX[i], startingColorY[i]);
+        for (int i = 0; i < startingCoordsX.length; i++) {
+            drawHorizontal(graphics, startingCoordsX[i], startingCoordsY[i]);
         }
 
     }
