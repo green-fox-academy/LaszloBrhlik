@@ -1,8 +1,8 @@
 import java.util.*;
 
-public class Exercise09_Candyshop{
+public class Exercise09_Candyshop {
     public static void main(String... args){
-        ArrayList<Object> arrayList = new ArrayList<Object>();
+        ArrayList<Object> arrayList = new ArrayList<>();
         arrayList.add("Cupcake");
         arrayList.add(2);
         arrayList.add("Brownie");
@@ -15,5 +15,11 @@ public class Exercise09_Candyshop{
 
         System.out.println(sweets(arrayList));
         // Expected output: "Cupcake", "Croissant", "Brownie", "Ice cream"
+    }
+
+    public static ArrayList sweets(ArrayList<Object> arrayList) {
+        arrayList.set(1, "Croissant");
+        arrayList.set(3, "Ice Cream");
+        return arrayList;
     }
 }
