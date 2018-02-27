@@ -1,6 +1,5 @@
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
@@ -30,7 +29,7 @@ public class Exercise05_WriteMultipleLines {
         Files.write(Paths.get(path), wordIn, StandardOpenOption.APPEND);
       }
     }catch (IOException e) {
-      System.out.println("Unable to write file: my-file.txt");
+      System.out.println("Unable to write file: " + path);
     }
 
   }
