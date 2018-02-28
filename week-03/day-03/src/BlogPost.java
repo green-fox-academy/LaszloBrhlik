@@ -1,11 +1,11 @@
-public class Exercise02_BlogPost {
+public class BlogPost {
   private String authorName;
   private String title;
   private String text;
   private String publicationDate;
   private String blogPostObject;
 
-  public Exercise02_BlogPost (String authorName, String title, String text, String publicationDate) {
+  public BlogPost(String authorName, String title, String text, String publicationDate) {
     this.authorName = authorName;
     this.title = title;
     this.text = text;
