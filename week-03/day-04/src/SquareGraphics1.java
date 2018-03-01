@@ -7,7 +7,7 @@ public class SquareGraphics1 {
 
   public static void mainDraw(Graphics graphics) {
 
-    drawSquares(graphics,7, 0,0,800);
+    drawSquares(graphics, 7, 0, 0, 800);
   }
 
   public static void drawSquares(Graphics graphics, int level, int startX, int startY, int size) {
