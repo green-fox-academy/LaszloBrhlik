@@ -10,24 +10,29 @@ public class KochSnowflake {
     int level = 8;
 
     for (int i = 1; i < level; i++) {
+
       graphics.setColor(new Color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256)));
 
-      drawSnowflake(graphics, i,WIDTH/2, 0, WIDTH, WIDTH*3/4);
-      drawSnowflake(graphics, i,WIDTH, WIDTH*3/4, 0, WIDTH*3/4);
-      drawSnowflake(graphics, i,0, WIDTH*3/4, WIDTH/2, 0);
+      drawSnowflakeOutside(graphics, i,WIDTH/2, 0, WIDTH, WIDTH*3/4);
+      drawSnowflakeOutside(graphics, i,WIDTH, WIDTH*3/4, 0, WIDTH*3/4);
+      drawSnowflakeOutside(graphics, i,0, WIDTH*3/4, WIDTH/2, 0);
     }
 
     for (int i = 1; i < level; i++) {
-      drawSnowflake2(graphics, i,WIDTH/2, 0, WIDTH, WIDTH*3/4);
-      drawSnowflake2(graphics, i,WIDTH, WIDTH*3/4, 0, WIDTH*3/4);
-      drawSnowflake2(graphics, i,0, WIDTH*3/4, WIDTH/2, 0);
+
+      graphics.setColor(new Color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256)));
+
+      drawSnowflakeInside(graphics, i,WIDTH/2, 0, WIDTH, WIDTH*3/4);
+      drawSnowflakeInside(graphics, i,WIDTH, WIDTH*3/4, 0, WIDTH*3/4);
+      drawSnowflakeInside(graphics, i,0, WIDTH*3/4, WIDTH/2, 0);
     }
 
   }
 
-  public static void drawSnowflake(Graphics graphics, int level, int x1, int y1, int x5, int y5) {
+  public static void drawSnowflakeOutside(Graphics graphics, int level, int x1, int y1, int x5, int y5) {
 
-    int deltax, deltay, x2,y2,x3,y3,x4,y4;
+    int deltaX, deltaY, x2, y2, x3, y3, x4, y4;
+    //relative coords of outer points of a cycle
 
     if (level==1) {
 
@@ -35,56 +40,51 @@ public class KochSnowflake {
 
     } else {
 
-      deltax = x5-x1;
-      deltay = y5-y1;
+      deltaX = x5-x1;
+      deltaY = y5-y1;
 
-      x2 = x1 + deltax/3;
-      y2 = y1 + deltay/3;
+      x2 = x1 + deltaX/3;
+      y2 = y1 + deltaY/3;
+      x3 = (int) ((x1 + x5)/2 + Math.sqrt(3) * (y5-y1)/6);
+      y3 = (int) ((y1 + y5)/2 + Math.sqrt(3) * (x1-x5)/6);
+      x4 = x1 + deltaX*2/3;
+      y4 = y1 + deltaY*2/3;
 
-      x3 = (int) (0.5 * (x1 + x5) + Math.sqrt(3) * (y5-y1) / 6);
-      y3 = (int) (0.5 * (y1 + y5) + Math.sqrt(3) * (x1-x5) / 6);
+      drawSnowflakeOutside(graphics, level-1, x1, y1, x2, y2);
+      drawSnowflakeOutside(graphics, level-1, x2, y2, x3, y3);
+      drawSnowflakeOutside(graphics, level-1, x3, y3, x4, y4);
+      drawSnowflakeOutside(graphics, level-1, x4, y4, x5, y5);
+    }
+  }
 
-      x4 = x1 + deltax*2/3;
-      y4 = y1 + deltay*2/3;
+
+  public static void drawSnowflakeInside(Graphics graphics, int level, int x1, int y1, int x5, int y5) {
+
+    int deltaX, deltaY, x2, y2, x3, y3, x4, y4;
+    //relative coords of inner points of a cycle
+
+    if (level==1) {
+
+      graphics.drawLine(x1, y1, x5, y5);
+
+    } else {
+
+      deltaX = x5-x1;
+      deltaY = y5-y1;
+
+      x2 = x1 + deltaX/3;
+      y2 = y1 + deltaY/3;
+      x3 = (int) ((x1 + x5)/2 + Math.sqrt(3) * (y1-y5)/6);
+      y3 = (int) ((y1 + y5)/2 + Math.sqrt(3) * (x5-x1)/6);
+      x4 = x1 + deltaX*2/3;
+      y4 = y1 + deltaY*2/3;
 
       //graphics.setColor(new Color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256)));
 
-      drawSnowflake(graphics, level-1, x1, y1, x2, y2);
-      drawSnowflake(graphics, level-1, x2, y2, x3, y3);
-      drawSnowflake(graphics, level-1, x3, y3, x4, y4);
-      drawSnowflake(graphics, level-1, x4, y4, x5, y5);
-
-    }
-  }
-
-
-  public static void drawSnowflake2(Graphics graphics, int level, int x1, int y1, int x5, int y5) {
-
-    int deltax, deltay, x2,y2,x3,y3,x4,y4;
-
-    if (level==1) {
-
-      graphics.drawLine(x1, y1, x5, y5);
-
-    } else {
-
-      deltax = x5-x1;
-      deltay = y5-y1;
-
-      x2 = x1 + deltax/3;
-      y2 = y1 + deltay/3;
-
-      x3 = (int) (0.5 * (x1 + x5) + Math.sqrt(3) * (y1-y5) / 6);
-      y3 = (int) (0.5 * (y1 + y5) + Math.sqrt(3) * (x5-x1) / 6);
-
-      x4 = x1 + deltax*2/3;
-      y4 = y1 + deltay*2/3;
-
-      drawSnowflake2(graphics, level-1, x1, y1, x2, y2);
-      drawSnowflake2(graphics, level-1, x2, y2, x3, y3);
-      drawSnowflake2(graphics, level-1, x3, y3, x4, y4);
-      drawSnowflake2(graphics, level-1, x4, y4, x5, y5);
-
+      drawSnowflakeInside(graphics, level-1, x1, y1, x2, y2);
+      drawSnowflakeInside(graphics, level-1, x2, y2, x3, y3);
+      drawSnowflakeInside(graphics, level-1, x3, y3, x4, y4);
+      drawSnowflakeInside(graphics, level-1, x4, y4, x5, y5);
     }
   }
 
