@@ -9,7 +9,7 @@ public class KochSnowflake {
 
     int level = 8;
 
-    for (int i = 1; i < level; i++) {
+    for (int i = 7; i < level; i++) {
 
       graphics.setColor(new Color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256)));
 
@@ -18,7 +18,7 @@ public class KochSnowflake {
       drawSnowflakeOutside(graphics, i,0, WIDTH*3/4, WIDTH/2, 0);
     }
 
-    for (int i = 1; i < level; i++) {
+    for (int i = 7; i < level; i++) {
 
       graphics.setColor(new Color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256)));
 
@@ -106,7 +106,7 @@ public class KochSnowflake {
     protected void paintComponent(Graphics graphics) {
       super.paintComponent(graphics);
       mainDraw(graphics);
-      this.setBackground(Color.black);
+      this.setBackground(Color.white);
     }
   }
 }
