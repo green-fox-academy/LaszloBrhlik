@@ -4,6 +4,7 @@ public class Pirate {
 
   String pirateName; //Pirates objects are not made yet
   boolean isAlive = true;
+  boolean passedOut = false;
   int drinkCounter = 0;
 
   public Pirate(String pirateName) {
@@ -22,7 +23,8 @@ public class Pirate {
     if (0 <= this.drinkCounter && this.drinkCounter < 5) {
       System.out.println("Pour me anudder!");
     } else {
-      System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
+      passedOut = true;
+      System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin? - and he passes out...");
     }
   }
 

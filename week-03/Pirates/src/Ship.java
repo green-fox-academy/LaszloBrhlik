@@ -13,11 +13,27 @@ public class Ship {
 
   public void fillShip(Pirate pirate, Pirate captain) {
     Random r = new Random();
-    for (int i = 0; i < (r.nextInt(100)+100); i++) {
+    for (int i = 0; i < (r.nextInt(100) + 100); i++) {
       //fill the ship with a captain and with pirates between 100 and 199
       this.crew.add(pirate);
     }
     this.crew.add(captain);
+  }
+
+  public void shipInfo() {
+    int crewAlive = 0;
+    int crewPassedOut = 0;
+    System.out.println("Consumed rum by the captain " + captain.drinkCounter);
+    for (int i = 0; i < crew.size(); i++) {
+      if (crew.get(i).isAlive) {
+        crewAlive++;
+      } if (crew.get(i).passedOut) {
+        crewPassedOut++;
+      }
+    }
+    System.out.println("Passed out crew members: "+crewPassedOut+" of "+crew.size());
+    System.out.println("Dead crew members: "+(crew.size()-crewAlive)+" of "+crew.size());
+    System.out.println("Pirates alive: "+crewAlive+" of "+crew.size());
   }
 
 }
