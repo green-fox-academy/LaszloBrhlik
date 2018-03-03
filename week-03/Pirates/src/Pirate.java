@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Pirate {
 
-  String pirateName;
+  String pirateName; //Pirates objects are not made yet
   boolean isAlive = true;
   int drinkCounter = 0;
 
@@ -43,9 +43,8 @@ public class Pirate {
         pirateName.die();
       }
     } else {
-      System.out.println("Both pirates are dead :( ");
+      System.out.println("One or both of the pirates are dead :( ");
     }
   }
-
 
 }
