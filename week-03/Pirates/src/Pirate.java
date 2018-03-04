@@ -4,7 +4,7 @@ public class Pirate {
 
   String pirate;
   //Pirate objects are made when filling the ship
-  //Except the captain, captain will be made by the ship constructor,
+  //Except the captain, captain will be added by the ship constructor,
   // since every ship has to have a captain, who is also a pirate
   boolean isAlive = true;
   boolean passedOut = false;
