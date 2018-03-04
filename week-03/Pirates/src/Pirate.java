@@ -44,9 +44,7 @@ public class Pirate {
         this.die();
         otherPirate.die();
       }
-    } else {
-      System.out.println("One or both of the pirates are dead :( ");
     }
-  }
 
+  }
 }
