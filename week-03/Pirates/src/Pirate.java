@@ -3,8 +3,9 @@ import java.util.Random;
 public class Pirate {
 
   String pirate;
-  //Pirates objects will be made when creating a ship
-  //Except the captain
+  //Pirate objects are made when filling the ship
+  //Except the captain, captain will be made by the ship constructor,
+  // since every ship has to have a captain, who is also a pirate
   boolean isAlive = true;
   boolean passedOut = false;
   int drinkCounter = 0;

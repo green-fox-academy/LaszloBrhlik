@@ -6,7 +6,7 @@ public class Ship {
 
   List<Pirate> crew;
   Pirate captain;
-  //Captain object will be made when creating a ship
+  //Pirate object captain has to be initialized in 'main'
   int score = 0;
   private Random r = new Random();
 
@@ -14,6 +14,7 @@ public class Ship {
     this.crew = new ArrayList<>();
     this.captain = captain;
     this.crew.add(this.captain);
+    //Captain added to the crew as the first member
   }
 
   public int aliveCounter() {
@@ -23,7 +24,7 @@ public class Ship {
         crewAlive++;
       }
     }
-    //even passed out members are alive!
+    //Even passed out members are alive!
     return crewAlive;
   }
 
@@ -53,7 +54,7 @@ public class Ship {
 
   public void fillShip() {
     for (int i = 1; i < (r.nextInt(5) + 5); i++) {
-      //fill the ship with a captain and with pirates between 5 and 9, and a captain
+      //Fill the ship with pirates between 5 and 9, captain already added by the constructor as a first member
       Pirate pirate = new Pirate("pirate" + i);
       this.crew.add(pirate);
     }
