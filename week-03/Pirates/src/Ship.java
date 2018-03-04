@@ -8,6 +8,7 @@ public class Ship {
   Pirate captain;
   //Pirate object captain has to be initialized in 'main'
   int score = 0;
+  boolean isDestroyed = false;
   private Random r = new Random();
 
   public Ship(Pirate captain) {
@@ -93,7 +94,7 @@ public class Ship {
   }
 
   private void winCondition(Ship ship) {
-    System.out.println("************VICTORY!************");
+    System.out.println("*********SHIP VICTORY!*********");
     System.out.println("Great job captain, " + ship.captain.pirate + "!");
     System.out.println("The ship has won!");
     System.out.println("Enjoy the party!");
@@ -120,6 +121,7 @@ public class Ship {
         }
       }
     }
+    ship.isDestroyed = true;
   }
 
 }

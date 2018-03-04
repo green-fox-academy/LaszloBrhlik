@@ -42,7 +42,7 @@ public class Pirate {
   }
 
   public void brawl(Pirate otherPirate) {
-    if (this.isAlive == true && otherPirate.isAlive == true) {
+    if (this.isAlive && otherPirate.isAlive) {
       Random r = new Random();
       int randomWinnerNumber = r.nextInt(3);
       if (randomWinnerNumber == 0) {
