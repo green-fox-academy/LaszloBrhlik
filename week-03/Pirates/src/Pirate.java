@@ -4,7 +4,7 @@ public class Pirate {
 
   String pirate;
   //Pirates objects will be made when creating a ship
-  //Except the captain, which will be kind of an ID of the ship
+  //Except the captain
   boolean isAlive = true;
   boolean passedOut = false;
   int drinkCounter = 0;
@@ -16,17 +16,23 @@ public class Pirate {
   public void drinkSomeRum() {
     if (isAlive) {
       this.drinkCounter++;
-    } else {
-      System.out.println("this pirate is dead");
     }
   }
 
   public void howIsItGoingMate() {
-    if (0 <= this.drinkCounter && this.drinkCounter < 5) {
-      System.out.println("Pour me anudder!");
+    if (this.isAlive) {
+      if (0 <= this.drinkCounter && this.drinkCounter < 5 && !this.passedOut) {
+        System.out.println(this.pirate + ": \"Pour me anudder\"!");
+      } else if (this.passedOut) {
+        System.out.println(this.pirate + ": is passed out!");
+      } else {
+        passedOut = true;
+        System.out.println(this.pirate + ": \"Arghh, I'ma Pirate. How d'ya d'ink its goin?\" - and he passes out...");
+      }
+      System.out.println("-------------------------------");
     } else {
-      passedOut = true;
-      System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin? - and he passes out...");
+      System.out.println(this.pirate + ": is dead!");
+      System.out.println("-------------------------------");
     }
   }
 

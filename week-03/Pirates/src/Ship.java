@@ -10,8 +10,10 @@ public class Ship {
   int score = 0;
   private Random r = new Random();
 
-  public Ship() {
+  public Ship(Pirate captain) {
     this.crew = new ArrayList<>();
+    this.captain = captain;
+    this.crew.add(this.captain);
   }
 
   public int aliveCounter() {
@@ -21,6 +23,7 @@ public class Ship {
         crewAlive++;
       }
     }
+    //even passed out members are alive!
     return crewAlive;
   }
 
@@ -35,6 +38,7 @@ public class Ship {
   }
 
   public void crewStatus() {
+    System.out.println("<---- "+crew.get(0).pirate+"'s ship ---->");
     for (int i = 0; i < crew.size(); i++) {
       crew.get(i).howIsItGoingMate();
     }
@@ -44,15 +48,15 @@ public class Ship {
     System.out.println("Passed out crew members: " + passedOutCounter() + " of " + crew.size());
     System.out.println("Dead crew members: " + (crew.size() - aliveCounter()) + " of " + crew.size());
     System.out.println("Pirates alive: " + aliveCounter() + " of " + crew.size());
+    System.out.println();
   }
 
-  public void fillShip(Pirate captain) {
-    for (int i = 0; i < (r.nextInt(10) + 9); i++) {
-      //fill the ship with a captain and with pirates between 10 and 19, and a captain
+  public void fillShip() {
+    for (int i = 1; i < (r.nextInt(5) + 5); i++) {
+      //fill the ship with a captain and with pirates between 5 and 9, and a captain
       Pirate pirate = new Pirate("pirate" + i);
       this.crew.add(pirate);
     }
-    this.crew.add(captain);
     //Each member is alive
     this.aliveCounter();
   }
@@ -76,30 +80,43 @@ public class Ship {
       winCondition(otherShip);
       looseCondition(this);
     } else {
-      System.out.println("Score is equal no one has won! :O");
+      System.out.println("********************************");
+      System.out.println("Score is equal, no one has won!!!");
+      System.out.println("********************************");
     }
+    System.out.println();
+    System.out.println("...and what happened after?");
+    System.out.println();
+    this.crewStatus();
+    otherShip.crewStatus();
   }
 
   private void winCondition(Ship ship) {
-    System.out.println("Great job captain, " + ship.captain + "!");
+    System.out.println("************VICTORY!************");
+    System.out.println("Great job captain, " + ship.captain.pirate + "!");
     System.out.println("The ship has won!");
-    System.out.println("Enjoy the party");
-    int roundsOfDrinks = r.nextInt(2) + 1;
-    for (int i = 1; i < roundsOfDrinks; i++) {
+    System.out.println("Enjoy the party!");
+    int roundsOfDrinks = r.nextInt(6) + 2;
+    for (int i = 1; i < roundsOfDrinks+1; i++) {
       for (int j = 0; j < ship.crew.size(); j++) {
         if (ship.crew.get(j).isAlive) {
           ship.crew.get(j).drinkSomeRum();
         }
       }
     }
-    System.out.println("..and they had " + roundsOfDrinks + " rounds of rum!");
+    System.out.println("They had " + roundsOfDrinks + " rounds of rum!");
+    System.out.println("********************************");
   }
 
   private void looseCondition(Ship ship) {
-    int losses = r.nextInt(ship.aliveCounter());
-    for (int i = 0; i < losses; i++) {
-      if (ship.crew.get(i).isAlive || ship.crew.get(i).passedOut) {
-        ship.crew.get(i).isAlive = false;
+    if (ship.aliveCounter() > 0) {
+      int losses = r.nextInt(ship.aliveCounter());
+      for (int i = 0; i < losses; i++) {
+        //Kill random number of pirates (from 0 to alive members)
+        if (ship.crew.get(i).isAlive) {
+          ship.crew.get(i).isAlive = false;
+          ship.crew.get(i).passedOut = false;
+        }
       }
     }
   }
