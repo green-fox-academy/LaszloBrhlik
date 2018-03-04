@@ -2,7 +2,9 @@ import java.util.Random;
 
 public class Pirate {
 
-  String pirate; //Pirates objects are not made yet
+  String pirate;
+  //Pirates objects will be made when creating a ship
+  //Except the captain, which will be kind of an ID of the ship
   boolean isAlive = true;
   boolean passedOut = false;
   int drinkCounter = 0;
@@ -41,8 +43,8 @@ public class Pirate {
       } else if (randomWinnerNumber == 1) {
         otherPirate.die();
       } else {
-        this.die();
-        otherPirate.die();
+        this.passedOut = true;
+        otherPirate.passedOut = true;
       }
     }
 
