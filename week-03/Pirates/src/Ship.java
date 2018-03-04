@@ -86,15 +86,10 @@ public class Ship {
       System.out.println("Score is equal, no one has won!!!");
       System.out.println("********************************");
     }
-    System.out.println();
-    System.out.println("...and what happened after?");
-    System.out.println();
-    this.crewStatus();
-    otherShip.crewStatus();
   }
 
   private void winCondition(Ship ship) {
-    System.out.println("*********SHIP VICTORY!*********");
+    System.out.println("******** SHIP VICTORY! ********");
     System.out.println("Great job captain, " + ship.captain.pirate + "!");
     System.out.println("The ship has won!");
     System.out.println("Enjoy the party!");
@@ -108,6 +103,7 @@ public class Ship {
     }
     System.out.println("They had " + roundsOfDrinks + " rounds of rum!");
     System.out.println("********************************");
+    System.out.println();
   }
 
   private void looseCondition(Ship ship) {
