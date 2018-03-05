@@ -5,9 +5,10 @@ public class Mentor {
   String gender;
   String level;
 
-  public Mentor(String name, int age, String level) {
+  public Mentor(String name, int age, String gender, String level) {
     this.name = name;
     this.age = age;
+    this.gender = gender;
     this.level = level;
   }
 
