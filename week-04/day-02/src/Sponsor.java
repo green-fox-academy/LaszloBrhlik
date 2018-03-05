@@ -10,12 +10,16 @@ public class Sponsor {
     this.name = name;
     this.age = age;
     this.gender = gender;
+    this.company = company;
+    this.hiredStudents = 0;
   }
 
   public Sponsor() {
     this.name = "Jane Doe";
     this.age = 30;
     this.gender = "female";
+    this.company = "Google";
+    this.hiredStudents = 0;
   }
 
   public void introduce() {
