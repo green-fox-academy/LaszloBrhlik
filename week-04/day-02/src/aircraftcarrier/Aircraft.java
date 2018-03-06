@@ -2,11 +2,11 @@ package aircraftcarrier;
 
 public class Aircraft {
 
-  private String type;
-  private int maxAmmo;
-  private int storedAmmo;
-  private int baseDamage;
-  private int allDamage;
+  public String type;
+  public int maxAmmo;
+  public int storedAmmo;
+  public int baseDamage;
+  public int allDamage;
 
   public Aircraft() {
     storedAmmo = 0;
@@ -38,6 +38,6 @@ public class Aircraft {
 
   public void getStatus() {
     System.out.println("Type: " + type + ", Ammo: " + storedAmmo + ", Base Damage: " + baseDamage +
-    ", All Damage: " + allDamage);
+            ", All Damage: " + allDamage);
   }
 }
