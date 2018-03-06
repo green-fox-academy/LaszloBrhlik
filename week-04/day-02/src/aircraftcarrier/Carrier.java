@@ -26,18 +26,17 @@ public class Carrier {
 
   public void fillAircrafts() {
     for (Aircraft aircraft : aircrafts) {
-      try {
-        while (aircraft.getType() == "F35") {
-          aircraft.reFill(storedAmmo);
-        }
-        while (aircraft.getType() == "F16") {
-          aircraft.reFill(storedAmmo);
-        }
-      } catch (ArrayIndexOutOfBoundsException e) {
-        System.out.println(e);
+      if (aircraft.getType() == "F35") {
+        aircraft.reFill(storedAmmo);
+      }
+    }
+    for (Aircraft aircraft : aircrafts) {
+      if (aircraft.getType() == "F16") {
+        aircraft.reFill(storedAmmo);
       }
     }
   }
+
 
   public void fight(Carrier carrier) {
     for (Aircraft aircraft : this.aircrafts) {
@@ -55,11 +54,11 @@ public class Carrier {
     } else {
       System.out.println();
       System.out.println("HP: " + healthPoint + ", Aircraft count: " + this.aircrafts.size() + ", Ammo Storage: " +
-      this.storedAmmo + ", Total damage: " + this.allDamage);
+              this.storedAmmo + ", Total damage: " + this.allDamage);
       System.out.println("Aircrafts:");
       for (Aircraft aircraft : this.aircrafts)
-       System.out.println("Type " + aircraft.getType() + ", Ammo: " + aircraft.storedAmmo + ", Base Damage: " +
-       aircraft.baseDamage + ", All Damage: " + aircraft.allDamage);
+        System.out.println("Type " + aircraft.getType() + ", Ammo: " + aircraft.storedAmmo + ", Base Damage: " +
+                aircraft.baseDamage + ", All Damage: " + aircraft.allDamage);
     }
   }
 }

@@ -20,9 +20,13 @@ public class Aircraft {
 
   public double reFill(double fill) {
     while (storedAmmo < maxAmmo) {
-      for (int i = 0; i < fill; i++) {
-        storedAmmo++;
-        fill--;
+      try {
+        for (int i = 0; i < fill; i++) {
+          storedAmmo++;
+          fill--;
+        }
+      } catch (ArrayIndexOutOfBoundsException e) {
+        System.out.println("Exception Handled");
       }
     }
     return fill;
