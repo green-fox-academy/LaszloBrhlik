@@ -19,17 +19,13 @@ public class Aircraft {
   }
 
   public double reFill(double fill) {
-    double filledAmmo;
-    if (storedAmmo == maxAmmo) {
-      return fill;
-    } else if (fill > maxAmmo - storedAmmo) {
-      filledAmmo = maxAmmo - storedAmmo;
-      storedAmmo += filledAmmo;
-      return fill - storedAmmo;
-    } else {
-      storedAmmo += fill;
-      return storedAmmo;
+    while (storedAmmo < maxAmmo) {
+      for (int i = 0; i < fill; i++) {
+        storedAmmo++;
+        fill--;
+      }
     }
+    return fill;
   }
 
   public String getType() {
