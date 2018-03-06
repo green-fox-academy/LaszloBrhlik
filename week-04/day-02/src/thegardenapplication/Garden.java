@@ -8,8 +8,12 @@ public class Garden {
   private List<Plant> garden;
   private int thirstyInGarden = 0;
 
-  public Garden(String name) {
+  public Garden() {
     this.garden = new ArrayList<>();
+  }
+
+  public void addPlants(Plant plant) {
+    this.garden.add(plant);
   }
 
   public void countThirst() {
@@ -27,9 +31,10 @@ public class Garden {
         plant.watering(amount / thirstyInGarden);
       }
     }
+    thirstyInGarden = 0;
   }
 
-  public void checkGarden() {
+  public void checkThirst() {
     for (Plant plant : garden) {
       if (plant.needWater) {
         System.out.println("The " + plant.color + " " + plant.name + " needs water");
@@ -37,6 +42,7 @@ public class Garden {
         System.out.println("The " + plant.color + " " + plant.name + " doesn't need water");
       }
     }
+    System.out.println();
   }
 
 }
