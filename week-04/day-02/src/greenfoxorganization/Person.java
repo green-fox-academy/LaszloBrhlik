@@ -2,9 +2,9 @@ package greenfoxorganization;
 
 public class Person {
 
-  String name;
-  int age;
-  String gender;
+  public String name;
+  public int age;
+  public String gender;
 
   public Person(String name, int age, String gender) {
     this.name = name;
@@ -19,7 +19,7 @@ public class Person {
   }
 
   public void introduce() {
-    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + " .");
+    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + ".");
   }
 
   public void getGoal() {

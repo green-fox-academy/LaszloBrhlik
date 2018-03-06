@@ -2,8 +2,8 @@ package greenfoxorganization;
 
 public class Sponsor extends Person {
 
-  String company;
-  int hiredStudents;
+  private String company;
+  private int hiredStudents;
 
   public Sponsor(String name, int age, String gender, String company) {
     super(name, age, gender);
@@ -27,6 +27,6 @@ public class Sponsor extends Person {
   }
 
   public void getGoal() {
-    System.out.println("Hire brilliant junior software developers.");
+    System.out.println("My goal is: Hire brilliant junior software developers.");
   }
 }

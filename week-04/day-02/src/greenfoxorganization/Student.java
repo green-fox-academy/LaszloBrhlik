@@ -2,8 +2,8 @@ package greenfoxorganization;
 
 public class Student extends Person {
 
-  String previousOrganization;
-  int skippedDays;
+  private String previousOrganization;
+  private int skippedDays;
 
   public Student(String name, int age, String gender, String previousOrganization) {
     super(name, age, gender);
@@ -25,7 +25,7 @@ public class Student extends Person {
 
   @Override
   public void getGoal() {
-    System.out.println("Be a junior software developer.");
+    System.out.println("My goal is: Be a junior software developer.");
   }
 
   public void skipDays(int numberOfDays) {

@@ -2,7 +2,7 @@ package greenfoxorganization;
 
 public class Mentor extends Person {
 
-  String level;
+  private String level;
 
   public Mentor(String name, int age, String gender, String level) {
     super(name, age, gender);
@@ -16,11 +16,11 @@ public class Mentor extends Person {
 
   @Override
   public void introduce() {
-    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + level + " mentor.");
+    System.out.println("Hi, I'm " + name + ", a " + age + " year old " + gender + " " + level + " mentor.");
   }
 
   @Override
   public void getGoal() {
-    System.out.println("Educate brilliant junior software developers.");
+    System.out.println("My goal is: Educate brilliant junior software developers.");
   }
 }

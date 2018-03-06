@@ -1,18 +1,18 @@
 package greenfoxorganization;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cohort {
 
-  String name;
-  List<Student> students;
-  List<Mentor> mentors;
+  private String name;
+  private List<Student> students;
+  private List<Mentor> mentors;
 
   public Cohort(String name) {
     this.name = name;
-    this.students = Collections.emptyList();
-    this.mentors = Collections.emptyList();
+    this.students = new ArrayList<>();
+    this.mentors = new ArrayList<>();
   }
 
   public void addStudent(Student student) {
