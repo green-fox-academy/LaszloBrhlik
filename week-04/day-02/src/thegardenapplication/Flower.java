@@ -14,5 +14,4 @@ public class Flower extends Plant {
       this.needWater = false;
     }
   }
-
 }

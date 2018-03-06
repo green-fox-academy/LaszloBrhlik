@@ -23,5 +23,4 @@ public class GardenApp {
     garden.checkThirst();
 
   }
-
 }

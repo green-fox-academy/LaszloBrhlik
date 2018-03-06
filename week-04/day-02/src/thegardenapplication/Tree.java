@@ -14,5 +14,4 @@ public class Tree extends Plant {
       this.needWater = false;
     }
   }
-
 }

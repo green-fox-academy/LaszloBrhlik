@@ -16,5 +16,4 @@ public class Plant {
   public void watering(double amount) {
     this.waterAbsorbed += amount;
   }
-
 }

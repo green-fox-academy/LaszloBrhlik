@@ -44,5 +44,4 @@ public class Garden {
     }
     System.out.println();
   }
-
 }
