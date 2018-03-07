@@ -37,7 +37,6 @@ public class Carrier {
     }
   }
 
-
   public void fight(Carrier carrier) {
     for (Aircraft aircraft : this.aircrafts) {
       aircraft.fight();
@@ -56,9 +55,9 @@ public class Carrier {
       System.out.println("HP: " + healthPoint + ", Aircraft count: " + this.aircrafts.size() + ", Ammo Storage: " +
               this.storedAmmo + ", Total damage: " + this.allDamage);
       System.out.println("Aircrafts:");
-      for (Aircraft aircraft : this.aircrafts)
-        System.out.println("Type " + aircraft.getType() + ", Ammo: " + aircraft.storedAmmo + ", Base Damage: " +
-                aircraft.baseDamage + ", All Damage: " + aircraft.allDamage);
+      for (Aircraft aircraft : this.aircrafts) {
+        System.out.println(aircraft.getStatus());
+      }
     }
   }
 }

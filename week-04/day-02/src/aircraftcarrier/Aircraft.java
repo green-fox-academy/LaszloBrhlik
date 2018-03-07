@@ -19,15 +19,15 @@ public class Aircraft {
   }
 
   public double reFill(double fill) {
-    while (storedAmmo < maxAmmo) {
-      try {
-        for (int i = 0; i < fill; i++) {
-          storedAmmo++;
+    try {
+      for (int i = 0; i < fill; i++) {
+        if (this.maxAmmo > this.storedAmmo) {
+          this.storedAmmo++;
           fill--;
         }
-      } catch (ArrayIndexOutOfBoundsException e) {
-        System.out.println("Exception Handled");
       }
+    } catch (ArrayIndexOutOfBoundsException e) {
+      System.out.println("Exception Handled");
     }
     return fill;
   }
@@ -36,8 +36,8 @@ public class Aircraft {
     return this.type;
   }
 
-  public void getStatus() {
-    System.out.println("Type: " + type + ", Ammo: " + storedAmmo + ", Base Damage: " + baseDamage +
-            ", All Damage: " + allDamage);
+  public String getStatus() {
+    return "Type: " + type + ", Ammo: " + storedAmmo + ", Base Damage: " + baseDamage +
+            ", All Damage: " + allDamage;
   }
 }
