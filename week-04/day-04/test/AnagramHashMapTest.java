@@ -49,6 +49,7 @@ public class AnagramHashMapTest {
   public void setUp() {
 
     anagramHashMapObject = new AnagramHashMap();
+
   }
 
   @Test
