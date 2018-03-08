@@ -13,7 +13,7 @@ public class AppleTest {
   }
 
   @Test
-  public void getApple() {
+  public void getAppleTest() {
     assertEquals("apple", apple.getApple());
   }
 }
