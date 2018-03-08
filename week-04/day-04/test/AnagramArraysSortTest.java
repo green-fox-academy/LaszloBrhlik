@@ -31,51 +31,13 @@ public class AnagramArraysSortTest {
     }
   }
 
-  String thisIsLong1 =
+/*  String thisIsLong1 =
 
-          "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!";
+          "This is a very very very long String with spaces and some UPPERCASES!";
 
   String thisIsLong2 =
 
-          "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!";
+          "Is a very very VERY lothng String with spaces andis some CASE Supper!";*/
 
   @Before
   public void setUp() {

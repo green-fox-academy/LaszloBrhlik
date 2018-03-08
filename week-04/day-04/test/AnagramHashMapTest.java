@@ -31,51 +31,19 @@ public class AnagramHashMapTest {
     }
   }
 
-  String thisIsLong1 =
+  String oneLineString1 =
 
-          "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!" +
-                  "This is a very very very long String with spaces and some UPPERCASES!";
+          "This is a very very very long String with spaces and some UPPERCASES!";
 
-  String thisIsLong2 =
+  String oneLineString2 =
 
-          "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!" +
-                  "Is a very very VERY lothng String with spaces andis some CASE Supper!";
+          "Is a very very VERY lothng String with spaces andis some CASE Supper!";
+
+  String emptyString1 = "";
+
+  String emptyString2 = "";
+
+  String nullString1 = null;
 
   @Before
   public void setUp() {
@@ -84,7 +52,32 @@ public class AnagramHashMapTest {
   }
 
   @Test
-  public void isAnagramTest() {
+  public void isAnagram2000LinesTest() {
     assertTrue(anagramHashMapObject.isAnagram(readFileToString1, readFileToString2));
+  }
+
+  @Test (timeout = 100)
+  public void isAnagram2000Lines100msTest() {
+    assertTrue(anagramHashMapObject.isAnagram(readFileToString1, readFileToString2));
+  }
+
+  @Test
+  public void isAnagramOneLineTest() {
+    assertTrue(anagramHashMapObject.isAnagram(oneLineString1, oneLineString2));
+  }
+
+  @Test
+  public void isAnagramEmptyStringTest() {
+    assertTrue(anagramHashMapObject.isAnagram(emptyString1, emptyString2));
+  }
+
+  @Test
+  public void isAnagramFalseTest() {
+    assertFalse(anagramHashMapObject.isAnagram("this should", "be false"));
+  }
+
+  @Test (expected = NullPointerException.class)
+  public void isAnagramNullStringTest() {
+    assertTrue(anagramHashMapObject.isAnagram(nullString1, emptyString2));
   }
 }
