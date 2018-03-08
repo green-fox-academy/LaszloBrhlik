@@ -1,14 +1,18 @@
 public class MagicWithNumbers {
 
-  int returnedNumber = 0;
+  int returnedNumber;
 
   public MagicWithNumbers() {
   }
 
   public int Sum(int[] addArrayList) {
-    for (Integer number : addArrayList) {
-      returnedNumber += number;
+    try {
+      for (Integer number : addArrayList) {
+        returnedNumber += number;
+      }
+      return returnedNumber;
+    } catch (NullPointerException e) {
+      return 0;
     }
-    return returnedNumber;
   }
 }
