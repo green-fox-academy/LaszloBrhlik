@@ -32,7 +32,7 @@ public class MagicWithNumbersTest {
     assertEquals(15, sumNumber1.Sum(testListMultipleElements));
   }
 
-  @Test
+  @Test(expected = NullPointerException.class)
   public void sumNullElementsTest() {
     assertEquals(0, sumNumber1.Sum(testListNull));
   }
