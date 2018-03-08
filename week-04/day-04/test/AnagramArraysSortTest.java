@@ -31,22 +31,47 @@ public class AnagramArraysSortTest {
     }
   }
 
-/*  String thisIsLong1 =
+  String oneLineString1 =
 
           "This is a very very very long String with spaces and some UPPERCASES!";
 
-  String thisIsLong2 =
+  String oneLineString2 =
 
-          "Is a very very VERY lothng String with spaces andis some CASE Supper!";*/
+          "Is a very very VERY lothng String with spaces andis some CASE Supper!";
+
+  String emptyString1 = "";
+
+  String emptyString2 = "";
+
+  String nullString1 = null;
 
   @Before
   public void setUp() {
-
     anagramArraysSortObject = new AnagramArraysSort();
   }
 
   @Test
-  public void isAnagramTest() {
+  public void isAnagram2000LinesTest() {
     assertTrue(anagramArraysSortObject.isAnagram(readFileToString1, readFileToString2));
+  }
+
+  @Test
+  public void isAnagramOneLineTest() {
+    assertTrue(anagramArraysSortObject.isAnagram(oneLineString1, oneLineString2));
+  }
+
+  @Test
+  public void isAnagramEmptyStringTest() {
+    assertTrue(anagramArraysSortObject.isAnagram(emptyString1, emptyString2));
+  }
+
+  @Test
+  public void isAnagramFalseTest() {
+    assertFalse(anagramArraysSortObject.isAnagram("this should", "be false"));
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void isAnagramNullStringTest() {
+    assertTrue(anagramArraysSortObject.isAnagram(nullString1, emptyString2));
   }
 }

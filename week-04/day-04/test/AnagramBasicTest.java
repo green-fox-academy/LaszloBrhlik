@@ -31,20 +31,52 @@ public class AnagramBasicTest {
     }
   }
 
+  String oneLineString1 =
+
+          "This is a very very very long String with spaces and some UPPERCASES!";
+
+  String oneLineString2 =
+
+          "Is a very very VERY lothng String with spaces andis some CASE Supper!";
+
+  String emptyString1 = "";
+
+  String emptyString2 = "";
+
+  String nullString1 = null;
+
   @Before
   public void setUp() {
-
     anagramBasicObject = new AnagramBasic();
-
   }
 
-  @Test
+  @Test (timeout = 30000)
   public void isAnagram2000LinesTest() {
-    assertTrue(anagramBasicObject.isAnagram(readFileToString1, readFileToString2));
+    assertTrue(anagramBasicObject.isAnagram
+            (readFileToString1, readFileToString2));
   }
 
   @Test
-  public void isAnagram2000LinesTes() {
-    assertTrue(anagramBasicObject.isAnagram("aaa ccc", "Cc caaa"));
+  public void isAnagramOneLineTest() {
+    assertTrue(anagramBasicObject.isAnagram
+            (oneLineString1, oneLineString2));
+  }
+
+  @Test
+  public void isAnagramEmptyStringTest() {
+    assertTrue(anagramBasicObject.isAnagram
+            (emptyString1, emptyString2));
+  }
+
+  @Test
+  public void isAnagramFalseTest() {
+    assertFalse(anagramBasicObject.isAnagram
+            ("this should", "be false"));
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void isAnagramNullStringTest() {
+    assertTrue(anagramBasicObject.isAnagram
+            (nullString1, emptyString2));
   }
 }

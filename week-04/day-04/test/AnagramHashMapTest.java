@@ -57,11 +57,6 @@ public class AnagramHashMapTest {
     assertTrue(anagramHashMapObject.isAnagram(readFileToString1, readFileToString2));
   }
 
-  @Test (timeout = 100)
-  public void isAnagram2000Lines100msTest() {
-    assertTrue(anagramHashMapObject.isAnagram(readFileToString1, readFileToString2));
-  }
-
   @Test
   public void isAnagramOneLineTest() {
     assertTrue(anagramHashMapObject.isAnagram(oneLineString1, oneLineString2));

@@ -10,7 +10,12 @@ public class AnagramHashMap {
     char[] anagram1CharArray = anagram1.replaceAll("[\\s]", "").toLowerCase().toCharArray();
     char[] anagram2CharArray = anagram2.replaceAll("[\\s]", "").toLowerCase().toCharArray();
 
-    Map<Character, Integer> myHashMap = new HashMap<>();
+    if (anagram1CharArray.length != anagram2CharArray.length) {
+      return false;
+    }
+
+    Map<Character, Integer> myHashMap =
+            new HashMap<>();
 
     for (char c : anagram1CharArray) {
       int counter = 1;

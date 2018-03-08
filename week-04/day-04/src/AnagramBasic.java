@@ -3,8 +3,10 @@ public class AnagramBasic {
   private boolean result = true;
 
   public boolean isAnagram(String one, String two) {
-    char[] charsOne = one.replaceAll("[\\s]", "").toLowerCase().toCharArray();
-    char[] charsTwo = two.replaceAll("[\\s]", "").toLowerCase().toCharArray();
+    char[] charsOne = one.replaceAll("[\\s]", "")
+            .toLowerCase().toCharArray();
+    char[] charsTwo = two.replaceAll("[\\s]", "")
+            .toLowerCase().toCharArray();
 
     if (charsOne.length != charsTwo.length) {
       result = false;
