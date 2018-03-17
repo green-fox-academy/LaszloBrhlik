@@ -7,7 +7,7 @@ public class Exercise20_Unique {
     //  Returns a list of numbers where every number in the list occurs only once
 
     //  Example
-    System.out.print(unique(new int[]{1, 11, 34, 11, 52, 61, 1, 34}));
+    System.out.print(unique(new int[]{100, 11, 34, 11, 52, 61, 1, 34}));
     //  should print: `[1, 11, 34, 52, 61]`
 
 
