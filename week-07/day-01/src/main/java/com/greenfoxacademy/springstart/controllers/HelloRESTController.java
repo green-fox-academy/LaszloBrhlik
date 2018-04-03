@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
-public class HelloRESTController extends AtomicLong{
+public class HelloRESTController {
+  // Count from 10
+  AtomicLong atomicLong = new AtomicLong(10);
 
   @RequestMapping("/greeting1")
   public Greeting greeting1() {
@@ -22,7 +24,7 @@ public class HelloRESTController extends AtomicLong{
 
   @RequestMapping("/greeting3")
   public Greeting greeting3(@RequestParam("name") String content) {
-    return new Greeting(getAndIncrement(), content);
+    return new Greeting(atomicLong.getAndIncrement(), content);
     // http://localhost:8080/greeting3?name=Laca
   }
 }
