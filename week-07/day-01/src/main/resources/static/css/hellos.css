@@ -1,0 +1,69 @@
+body {
+    background-color: black;
+}
+
+@keyframes changingColor {
+    10% {
+        color: blue;
+    }
+    20% {
+        color: dodgerblue;
+    }
+    30% {
+        color: cornflowerblue;
+    }
+    40% {
+        color: lightskyblue;
+    }
+    50% {
+        color: lightblue;
+    }
+    60% {
+        color: lightgreen;
+    }
+    70% {
+        color: springgreen;
+    }
+    80% {
+        color: mediumseagreen;
+    }
+    90% {
+        color: lightseagreen;
+    }
+}
+
+@keyframes changingFontSize {
+    10% {
+        font-size: 30px;
+    }
+    20% {
+        font-size: 31px;
+    }
+    30% {
+        font-size: 32px;
+    }
+    40% {
+        font-size: 33px;
+    }
+    50% {
+        font-size: 34px;
+    }
+    60% {
+        font-size: 33px;
+    }
+    70% {
+        font-size: 32px;
+    }
+    80% {
+        font-size: 31px;
+    }
+    90% {
+        font-size: 30px;
+    }
+}
+
+table, tr, td {
+    padding: 10px;
+    display: inline-block;
+    animation: changingFontSize 5s infinite, changingColor 5s infinite;
+}
