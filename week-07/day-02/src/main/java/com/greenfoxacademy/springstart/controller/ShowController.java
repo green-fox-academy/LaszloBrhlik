@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ShowController {
-  BankAccount bankAccount = new BankAccount("Simba", "2000", "lion");
+  BankAccount bankAccount = new BankAccount("Simba", 2000, "lion");
 
   @RequestMapping(value = "/web/show")
   public String show(Model model) {
     model.addAttribute("name", bankAccount.getName());
-    model.addAttribute("balance", bankAccount.getBalance());
+    model.addAttribute("currency", bankAccount.getCurrency());
     model.addAttribute("animalType", bankAccount.getAnimalType());
     return "show";
   }
