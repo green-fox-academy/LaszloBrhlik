@@ -24,12 +24,16 @@
         <td>
             <img th:src="${bankAccount.isKing()} ? '../images/crown.png'"/>
         </td>
-
-        <!--
-        <td th:style="${bankAccount.isKing()} ? 'background: url("../css/style.css}");' : 'background: #000;'"></td>
--->
     </tr>
+
 </table>
+
+<!--
+Need fix
+-->
+<!--<form action="#" th:action="@{/showmultiple}" th:object="${bankAccounts}" method="post">
+    <p><input type="submit" value="Submit" /></p>
+</form>-->
 
 </body>
 </html>

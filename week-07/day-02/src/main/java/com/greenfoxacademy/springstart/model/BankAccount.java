@@ -39,4 +39,8 @@ public class BankAccount {
   public boolean isGood() {
     return isGood;
   }
+
+  public double setBalance() {
+    return balance += 100;
+  }
 }
