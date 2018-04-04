@@ -1,5 +1,10 @@
+body {
+    background: black url("../images/sunrise.jpg") no-repeat;
+    background-size: cover;
+}
+
 td {
     padding: 10px;
     font-size: 20px;
-    border: 10px solid black;
+    border: 1px solid black;
 }
