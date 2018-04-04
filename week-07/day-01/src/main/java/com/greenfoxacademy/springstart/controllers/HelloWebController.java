@@ -38,4 +38,10 @@ public class HelloWebController {
     return "greeting3";
     // http://localhost:8080/web/greeting3
   }
+
+  @RequestMapping(value = "/web/show")
+  public String show(Model model) {
+    model.addAttribute("name", "aaa";
+    return "showController";
+
 }
