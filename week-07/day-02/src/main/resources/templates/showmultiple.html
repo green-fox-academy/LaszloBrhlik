@@ -13,11 +13,21 @@
         <td><b>Name</b></td>
         <td><b>Currency</b></td>
         <td><b>Animal Type</b></td>
+        <td><b>King</b></td>
     </tr>
-    <tr th:each="bankAccount: ${bankAccounts}">
+
+    <tr th:each="bankAccount, accountId : ${bankAccounts}">
+        <td th:text="${accountId.index+1}"></td>
         <td th:text="${bankAccount.getName()}"></td>
         <td th:text="${bankAccount.getCurrency()}"></td>
         <td th:text="${bankAccount.getAnimalType()}"></td>
+        <td>
+            <img th:src="${bankAccount.isKing()} ? '../images/crown.png'"/>
+        </td>
+
+        <!--
+        <td th:style="${bankAccount.isKing()} ? 'background: url("../css/style.css}");' : 'background: #000;'"></td>
+-->
     </tr>
 </table>
 

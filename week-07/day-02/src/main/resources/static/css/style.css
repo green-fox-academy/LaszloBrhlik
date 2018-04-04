@@ -8,3 +8,11 @@ td {
     font-size: 20px;
     border: 1px solid black;
 }
+
+img {
+    max-width:36px;
+    max-height:22px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
