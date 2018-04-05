@@ -25,9 +25,8 @@ public class MultipleAccountController {
 
   @PostMapping("/showmultiple")
   public String donate() {
-    for (BankAccount bankAccount : bankAccounts) {
-      bankAccount.setBalance();
-    }
+    bankAccounts.stream()
+            .forEach(bankAccount -> bankAccount.setBalance());
     return "showmultiple";
   }
 }
