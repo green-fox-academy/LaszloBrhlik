@@ -11,6 +11,9 @@ public class HelloWorld implements CommandLineRunner {
   @Autowired
   Printer printer;
 
+  @Autowired
+  MyColor myColor;
+
   public static void main(String[] args) {
     SpringApplication.run(HelloWorld.class, args);
     System.exit(0);
@@ -19,5 +22,6 @@ public class HelloWorld implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     printer.log("hello");
+    myColor.printColor();
   }
 }
