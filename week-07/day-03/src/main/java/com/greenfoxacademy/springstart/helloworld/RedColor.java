@@ -1,4 +1,4 @@
-package com.greenfoxacademy.springstart;
+package com.greenfoxacademy.springstart.helloworld;
 
 import org.springframework.stereotype.Component;
 
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class RedColor implements MyColor{
 
   @Override
-  public void printColor() {
-    System.out.println("It is red in color...");
+  public String printColor() {
+    return "It is red in color...";
   }
 }

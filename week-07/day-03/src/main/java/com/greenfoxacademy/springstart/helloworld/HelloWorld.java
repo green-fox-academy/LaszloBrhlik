@@ -1,4 +1,4 @@
-package com.greenfoxacademy.springstart;
+package com.greenfoxacademy.springstart.helloworld;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -21,7 +21,7 @@ public class HelloWorld implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    printer.log("hello");
-    myColor.printColor();
+    System.out.println(printer.log("hello"));
+    System.out.println(printer.log(myColor.printColor()));
   }
 }
