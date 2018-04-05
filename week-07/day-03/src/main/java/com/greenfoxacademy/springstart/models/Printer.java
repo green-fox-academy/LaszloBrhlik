@@ -1,4 +1,4 @@
-package com.greenfoxacademy.springstart.helloworld;
+package com.greenfoxacademy.springstart.models;
 
 import org.springframework.stereotype.Component;
 
