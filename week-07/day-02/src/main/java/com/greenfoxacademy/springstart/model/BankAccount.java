@@ -12,7 +12,7 @@ public class BankAccount {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
-    currency = String.format("%.2f", balance) + " Zebra";
+    currency = setCurrency();
     this.isKing = isKing;
   }
 
@@ -40,7 +40,12 @@ public class BankAccount {
     return isGood;
   }
 
-  public double setBalance() {
-    return balance += 100;
+  public void setBalance() {
+    balance += 100;
+    setCurrency();
+  }
+
+  public String setCurrency() {
+    return currency = String.format("%.2f", balance) + " Zebra";
   }
 }
