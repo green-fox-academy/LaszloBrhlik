@@ -14,8 +14,8 @@ public class FoxDB {
 
   public FoxDB() {
     foxes = new ArrayList<>(Arrays.asList(
-            new Fox("Vuk"),
-            new Fox("Vahur")
+            new Fox("vuk"),
+            new Fox("vahur")
     ));
   }
 

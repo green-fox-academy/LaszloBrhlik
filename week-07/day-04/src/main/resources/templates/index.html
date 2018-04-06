@@ -12,16 +12,11 @@
 </ul>
 
 <div>
-    <img src="/images/greenfoxlogo.png"/>
+    <img src="/images/greenfoxlogo.png" alt="Fox"/>
 </div>
+<p th:text="'This is MR.' + ${fox.getName()} +'. Currently living on pizza and lemonade. He knows 2 tricks.'"></p>
 
-<p>
-    This is Mr.Fox. Currently living on pizza and lemonade. He knows 2 tricks.
-</p>
-
-<h1>
-    Known tricks
-</h1>
+<h1>Known tricks</h1>
 
 <ul>
     <li>write HTML</li>
