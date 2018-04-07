@@ -16,3 +16,10 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
+.donate {
+    margin: 5px;
+    font-size: 15px;
+    background-color: red;
+    border: 1px solid black;
+}
