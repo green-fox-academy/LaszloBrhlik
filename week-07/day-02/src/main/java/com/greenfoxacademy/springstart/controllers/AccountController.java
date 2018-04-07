@@ -1,6 +1,6 @@
-package com.greenfoxacademy.springstart.controller;
+package com.greenfoxacademy.springstart.controllers;
 
-import com.greenfoxacademy.springstart.model.BankAccount;
+import com.greenfoxacademy.springstart.models.BankAccount;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Controller
-public class MultipleAccountController {
+public class AccountController {
   BankAccount bankAccount1 = new BankAccount("Simba", 4000, "lion", true);
   BankAccount bankAccount2 = new BankAccount("Timon", 3000, "ophuzi mongoose", false);
   BankAccount bankAccount3 = new BankAccount("Pumba", 2000, "pig", false);
@@ -20,13 +20,13 @@ public class MultipleAccountController {
   @GetMapping("/showmultiple")
   public String show(Model model) {
     model.addAttribute("bankAccounts", bankAccounts);
-    return "showmultiple";
+    return "accounts";
   }
 
   @PostMapping("/showmultiple")
   public String donate() {
     bankAccounts.stream()
             .forEach(bankAccount -> bankAccount.setBalance());
-    return "showmultiple";
+    return "accounts";
   }
 }

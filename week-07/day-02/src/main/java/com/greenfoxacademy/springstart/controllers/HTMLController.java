@@ -1,11 +1,11 @@
-package com.greenfoxacademy.springstart.controller;
+package com.greenfoxacademy.springstart.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HTMLceptionController {
+public class HTMLController {
 
   @RequestMapping(value = "/web/htmlception")
   public String show(Model model) {

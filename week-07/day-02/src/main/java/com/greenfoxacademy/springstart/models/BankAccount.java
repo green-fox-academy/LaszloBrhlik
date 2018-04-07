@@ -1,4 +1,4 @@
-package com.greenfoxacademy.springstart.model;
+package com.greenfoxacademy.springstart.models;
 
 public class BankAccount {
   String name;
