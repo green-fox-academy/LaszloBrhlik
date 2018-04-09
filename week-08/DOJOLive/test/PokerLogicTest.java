@@ -39,7 +39,7 @@ public class PokerLogicTest {
   }
 
   @Test
-  public void checkHighCardTie() {
+  public void testHighCardTie() {
     // Arrange
     List<String> black = new ArrayList<>(Arrays.asList("2H", "3D", "5S", "9C", "KD"));
     List<String> white = new ArrayList<>(Arrays.asList("2D", "3H", "5C", "9S", "KH"));
@@ -53,7 +53,7 @@ public class PokerLogicTest {
   }
 
   @Test
-  public void checkIfUnorderedHigherCard() {
+  public void testUnorderedHigherCard() {
     // Arrange
     List<String> black = new ArrayList<>(Arrays.asList("KD", "2H", "3D", "5S", "9C"));
     List<String> white = new ArrayList<>(Arrays.asList("2D", "3H", "5C", "9S", "KH"));

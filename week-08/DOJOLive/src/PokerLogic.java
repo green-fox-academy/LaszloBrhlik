@@ -2,16 +2,16 @@ import java.util.Comparator;
 import java.util.List;
 
 public class PokerLogic {
+  private String name = "";
+  private String cardValue = "";
 
   public String getResult(List<String> black, List<String> white) {
 
     black.sort(Comparator.comparing(o -> decodeValue(o)));
     white.sort(Comparator.comparing(o -> decodeValue(o)));
 
-    String name = "";
-    String cardValue = "";
-
-    return checkHighCard(black, white, name, cardValue);
+    checkHighCard(black, white, name, cardValue);
+    return result(name, cardValue);
   }
 
   public int decodeValue(String card) {
@@ -39,18 +39,22 @@ public class PokerLogic {
     }
   }
 
-  public String checkHighCard(List<String> black, List<String> white, String name, String cardValue) {
+  public void checkHighCard(List<String> black, List<String> white, String name, String cardValue) {
     for (int i = 4; i >= 0; i--) {
       if (whoHasHigherCard(black.get(i), white.get(i)) == -1) {
-        name = "Black";
-        cardValue = ((Character) black.get(i).charAt(0)).toString();
+        this.name = "Black";
+        this.cardValue = ((Character) black.get(i).charAt(0)).toString();
         break;
       } else if (whoHasHigherCard(black.get(i), white.get(i)) == 1) {
-        name = "White";
-        cardValue = ((Character) white.get(i).charAt(0)).toString();
+        this.name = "White";
+        this.cardValue = ((Character) white.get(i).charAt(0)).toString();
         break;
       }
+
     }
+  }
+
+  public String result(String name, String cardValue) {
     if (name.isEmpty()) {
       return "Tie";
     } else {
