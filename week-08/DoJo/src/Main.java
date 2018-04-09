@@ -3,6 +3,7 @@ public class Main {
   public static void main(String[] args) {
 
     // PokerLogic still has to be extended to handle tie cases properly
+    // Maybe should implement comparator
     // Results are showing only the winner and counted rankings yet
 
     Person black1 = new Person("Black", "2H", "3D", "5S", "9C", "KD");
