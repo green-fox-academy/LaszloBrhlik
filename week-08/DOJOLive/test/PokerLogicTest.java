@@ -66,7 +66,7 @@ public class PokerLogicTest {
     assertEquals(expectedResult, result);
   }
 
-/*  @Test
+  @Test
   public void checkFlush() {
     // Arrange
     List<String> black = new ArrayList<>(Arrays.asList("2H", "4S", "4C", "2D", "4H"));
@@ -78,5 +78,5 @@ public class PokerLogicTest {
 
     // Assert
     assertEquals(expectedResult, result);
-  }*/
+  }
 }
