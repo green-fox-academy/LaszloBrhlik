@@ -11,11 +11,53 @@ public class PokerLogicTest {
   PokerLogic pokerLogic = new PokerLogic();
 
   @Test
-  public void checkHighCard() {
+  public void testHighestCard() {
     // Arrange
     List<String> black = new ArrayList<>(Arrays.asList("2H", "3D", "5S", "9C", "KD"));
     List<String> white = new ArrayList<>(Arrays.asList("2C", "3H", "4S", "8C", "AH"));
-    String expectedResult = "White wins! - (High card: Ace)";
+    String expectedResult = "White wins! - (High card: A)";
+
+    // Act
+    String result = pokerLogic.getResult(black, white);
+
+    // Assert
+    assertEquals(expectedResult, result);
+  }
+
+  @Test
+  public void testHigherCard() {
+    // Arrange
+    List<String> black = new ArrayList<>(Arrays.asList("2H", "3D", "5S", "9C", "KD"));
+    List<String> white = new ArrayList<>(Arrays.asList("2C", "3H", "4S", "8C", "KH"));
+    String expectedResult = "Black wins! - (High card: 9)";
+
+    // Act
+    String result = pokerLogic.getResult(black, white);
+
+    // Assert
+    assertEquals(expectedResult, result);
+  }
+
+  @Test
+  public void checkHighCardTie() {
+    // Arrange
+    List<String> black = new ArrayList<>(Arrays.asList("2H", "3D", "5S", "9C", "KD"));
+    List<String> white = new ArrayList<>(Arrays.asList("2D", "3H", "5C", "9S", "KH"));
+    String expectedResult = "Tie";
+
+    // Act
+    String result = pokerLogic.getResult(black, white);
+
+    // Assert
+    assertEquals(expectedResult, result);
+  }
+
+  @Test
+  public void checkIfUnorderedHigherCard() {
+    // Arrange
+    List<String> black = new ArrayList<>(Arrays.asList("KD", "2H", "3D", "5S", "9C"));
+    List<String> white = new ArrayList<>(Arrays.asList("2D", "3H", "5C", "9S", "KH"));
+    String expectedResult = "Tie";
 
     // Act
     String result = pokerLogic.getResult(black, white);
@@ -37,18 +79,4 @@ public class PokerLogicTest {
     // Assert
     assertEquals(expectedResult, result);
   }*/
-
-  @Test
-  public void checkHighCard2() {
-    // Arrange
-    List<String> black = new ArrayList<>(Arrays.asList("2H", "3D", "5S", "9C", "KD"));
-    List<String> white = new ArrayList<>(Arrays.asList("2C", "3H", "4S", "8C", "KH"));
-    String expectedResult = "Black wins! - (High card: 9)";
-
-    // Act
-    String result = pokerLogic.getResult(black, white);
-
-    // Assert
-    assertEquals(expectedResult, result);
-  }
 }
