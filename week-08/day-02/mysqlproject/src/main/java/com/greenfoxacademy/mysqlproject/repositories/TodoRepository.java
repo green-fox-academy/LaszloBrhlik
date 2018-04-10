@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface TodoRepository extends CrudRepository<Todo, Long>{
 
-  List<Todo> findAllByDoneIsFalse();
+  List<Todo> findAllByDoneIsFalseOrderById();
+  List<Todo> findAllByOrderById();
+
 }

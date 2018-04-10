@@ -2,3 +2,8 @@ td {
     padding: 10px;
     border: 1px solid dimgrey;
 }
+
+input {
+    display: block;
+    margin-bottom: 10px;
+}
