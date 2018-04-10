@@ -67,7 +67,7 @@ public class PokerLogicTest {
   }
 
   @Test
-  public void checkFlush() {
+  public void testFlush() {
     // Arrange
     List<String> black = new ArrayList<>(Arrays.asList("2H", "4S", "4C", "2D", "4H"));
     List<String> white = new ArrayList<>(Arrays.asList("2S", "8S", "AS", "QS", "3S"));
