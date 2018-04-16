@@ -8,11 +8,11 @@ public class ErrorMessage {
     this.error = errorMessage;
   }
 
-  public String getErrorMessage() {
+  public String getError() {
     return error;
   }
 
-  public void setErrorMessage(String errorMessage) {
-    this.error = errorMessage;
+  public void setError(String error) {
+    this.error = error;
   }
 }
