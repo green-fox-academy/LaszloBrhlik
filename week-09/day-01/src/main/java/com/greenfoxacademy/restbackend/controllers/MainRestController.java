@@ -1,9 +1,11 @@
 package com.greenfoxacademy.restbackend.controllers;
 
+import com.greenfoxacademy.restbackend.models.AppendA;
 import com.greenfoxacademy.restbackend.models.Doubling;
 import com.greenfoxacademy.restbackend.models.ErrorMessage;
 import com.greenfoxacademy.restbackend.models.Greet;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,6 +32,15 @@ public class MainRestController {
       return new ErrorMessage("Please provide a title!");
     } else {
       return new Greet(name, title);
+    }
+  }
+
+  @GetMapping("/appenda/{appendable}")
+  public Object appendA(@PathVariable(name = "appendable", required = false) String input) {
+    if (input != null) {
+      return new AppendA(input);
+    } else {
+      return "";
     }
   }
 }
