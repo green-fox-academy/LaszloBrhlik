@@ -1,13 +1,7 @@
 package com.greenfoxacademy.restbackend.controllers;
 
-import com.greenfoxacademy.restbackend.models.AppendA;
-import com.greenfoxacademy.restbackend.models.Doubling;
-import com.greenfoxacademy.restbackend.models.ErrorMessage;
-import com.greenfoxacademy.restbackend.models.Greet;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import com.greenfoxacademy.restbackend.models.*;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MainRestController {
@@ -41,6 +35,16 @@ public class MainRestController {
       return new AppendA(input);
     } else {
       return "";
+    }
+  }
+
+  @PostMapping("/dountil/{what}")
+  public Object doUntil(@PathVariable(name = "what", required = false) String what,
+                        @RequestBody (required = false) Until until) {
+    if (until == null) {
+      return new ErrorMessage("Please provide a number!");
+    } else {
+      return new DoUntil(what, until.getUntil());
     }
   }
 }
