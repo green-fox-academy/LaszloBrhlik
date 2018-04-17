@@ -22,12 +22,19 @@ public class MainRestControllerTest {
   private MockMvc mockMvc;
 
   @Test
-  public void doubling_whenInputIs10ThanResultIs20() throws Exception{
+  public void doubling_whenInputIs10ThanExpectingAResultOf20() throws Exception{
     mockMvc.perform(get("/doubling?input=10")
             .contentType(MediaType.APPLICATION_JSON)
             .content("{\"until\": 10}"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.result").value(20));
 
+  }
+
+  @Test
+  public void doubling_whenInputIsNullThanExpectingAnErrorMessage() throws Exception{
+    mockMvc.perform(get("/doubling"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.error").value("Please provide an input!"));
   }
 }
