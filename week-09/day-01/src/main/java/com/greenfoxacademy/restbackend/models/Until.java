@@ -7,8 +7,8 @@ public class Until {
   public Until() {
   }
 
-  public Until(Integer number) {
-    this.until = number;
+  public Until(Integer until) {
+    this.until = until;
   }
 
   public Integer getUntil() {
