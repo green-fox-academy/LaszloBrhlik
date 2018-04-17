@@ -1,10 +1,5 @@
 package com.greenfoxacademy.guardians.models;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 public class ErrorMessage implements GrootResponse{
 
   private String error;
@@ -13,6 +8,14 @@ public class ErrorMessage implements GrootResponse{
   }
 
   public ErrorMessage(String error) {
+    this.error = error;
+  }
+
+  public String getError() {
+    return error;
+  }
+
+  public void setError(String error) {
     this.error = error;
   }
 }

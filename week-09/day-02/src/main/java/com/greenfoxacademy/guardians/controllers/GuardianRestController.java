@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class GuardianController {
+public class GuardianRestController {
 
   // Setting response HTTPStatus
   @GetMapping("/groot")
