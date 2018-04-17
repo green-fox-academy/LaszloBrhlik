@@ -23,12 +23,9 @@ public class MainRestControllerTest {
 
   @Test
   public void doubling_whenInputIs10ThanExpectingAResultOf20() throws Exception{
-    mockMvc.perform(get("/doubling?input=10")
-            .contentType(MediaType.APPLICATION_JSON)
-            .content("{\"until\": 10}"))
+    mockMvc.perform(get("/doubling?input=10"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.result").value(20));
-
   }
 
   @Test
@@ -36,5 +33,12 @@ public class MainRestControllerTest {
     mockMvc.perform(get("/doubling"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.error").value("Please provide an input!"));
+  }
+
+  @Test
+  public void greeter_whenNameAndTitleIsNotNullThanExpectingGreet() throws Exception{
+    mockMvc.perform(get("/greeter?name=laca&title=student"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.welcome_message").value("Oh, hi there laca, my dear student!"));
   }
 }
