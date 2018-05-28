@@ -26,13 +26,9 @@ public class Carrier {
 
   public void fillAircrafts() {
     for (Aircraft aircraft : aircrafts) {
-      if (aircraft.getType() == "F35") {
-        aircraft.reFill(storedAmmo);
-      }
-    }
-    for (Aircraft aircraft : aircrafts) {
-      if (aircraft.getType() == "F16") {
-        aircraft.reFill(storedAmmo);
+      while (storedAmmo > 0 && aircraft.maxAmmo > aircraft.storedAmmo) {
+        storedAmmo--;
+        aircraft.storedAmmo++;
       }
     }
   }
